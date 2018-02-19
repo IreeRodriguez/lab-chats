@@ -39,3 +39,24 @@ form button {
 .ppl{
     color: green;
 }
+.you{
+    color: blue;
+}
+
+section{
+    margin-top: 5em;
+    text-align: center;
+  
+}
+
+.loginForm > *{
+    margin: 0.5em;
+}
+.loginForm {
+    padding: 0.5em;
+    background-color: rgba(130, 224, 255, 0.5);
+    border-radius: 1em;
+    display: flex;
+    flex-flow: column;
+    justify-content: center;
+}

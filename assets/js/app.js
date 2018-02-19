@@ -1,18 +1,25 @@
 let numUsers = 0;
-let yourName = '';
+let yourName = 'You';
 let loggedIn = false;
 
 $(function () {
     var socket = io('http://ec2-34-227-11-223.compute-1.amazonaws.com:3000');
+
     $('form').submit(function (e) {
         e.preventDefault();
         const msg = $('#m').val();
-        addToChat(`<li><span class="ppl">${yourName}</span>: ${msg} </li>`);
+        addToChat(`<li><span class="you">${yourName}</span>: ${msg} </li>`);
         socket.emit('new message', msg);
+        $('#m').val('');
     });
 
     socket.on('new message', function (obj) {
-        addToChat(`<li><span class="ppl">${obj.username}</span>: ${obj.message} </li>`);
+        const name = obj.username ? obj.username : 'Guest';
+        addToChat(`<li><span class="ppl">${name}</span>: ${obj.message} </li>`);
+    });
+
+    socket.on('chat message', function (msg) {
+        addToChat(`<li><span class="ppl">Guest</span>: ${msg} </li>`);
     });
 
     $('#btn').click(function (e) {
@@ -24,7 +31,7 @@ $(function () {
     });
 
     socket.on('login', function (obj) {
-        addToChat(`<li>you logged in as ${yourName}</li>`);
+        addToChat(`<li>you logged in as <span class="you">${yourName}</span></li>`);
         loggedIn = true;
     });
 
@@ -37,14 +44,6 @@ $(function () {
         addToChat(`<li><span class="ppl">${obj.username}</span> logged out</li>`);
         numUsers = obj.numUsers;
     });    
-
-    socket.on('typing', function (obj) {
-        addToChat(`<li><span class="ppl">${obj.username}</span> is typing...</li>`);
-    });
-
-    socket.on('stop typing', function (obj) {
-        addToChat(`<li><span class="ppl">${obj.username}</span> stopped typing</li>`);
-    });
 });
 
 function addToChat(msg) {
