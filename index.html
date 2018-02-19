@@ -6,30 +6,22 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <title>Chat Laboratoria</title>
-  <link rel="stylesheet" href="/css/style.css">
+  <!-- <link rel="stylesheet" href="/css/style.css"> -->
+  <link rel="stylesheet" href="assets/css/style.css">
 </head>
 
 <body>
+  <input type="text" placeholder="username" id="userid">
+  <button type="submit" id="btn">login</button>
+
+
   <ul id="messages"></ul>
   <form action="">
     <input id="m" autocomplete="off" />
     <button>Send</button>
   </form>
-  <script src="/socket.io.js"></script>
+  <script src="https://cdn.socket.io/socket.io-1.2.0.js"></script>
   <script src="https://code.jquery.com/jquery-1.11.1.js"></script>
-  <script>
-    $(function () {
-      var socket = io('http://ec2-34-227-11-223.compute-1.amazonaws.com:3000');
-      $('form').submit(function () {
-        socket.emit('chat message', $('#m').val());
-        $('#m').val('');
-        return false;
-      });
-      socket.on('chat message', function (msg) {
-        $('#messages').append($('<li>').text(msg));
-        window.scrollTo(0, document.body.scrollHeight);
-      });
-    });
-  </script>
+  <script src="assets/js/app.js"></script>
 </body>
 </html>
