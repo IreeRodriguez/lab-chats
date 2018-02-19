@@ -27,7 +27,14 @@ $(function () {
         if ($('#userid').val().length > 0 && !loggedIn) {
             yourName = $('#userid').val();
             socket.emit('add user', yourName);
+            $('#chat').removeClass('d-none');
+            $('#firstLogin').addClass('d-none');
         }
+    });
+    $('#guest').click(function (e) {
+        e.preventDefault();
+        $('#chat').removeClass('d-none');
+        $('#firstLogin').addClass('d-none');
     });
 
     socket.on('login', function (obj) {
