@@ -13,6 +13,31 @@
 </head>
 
 <body>
+  <nav class="navbar navbar-expand-lg navbar-light">
+    <a class="navbar-brand" href="#">ChatLab</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+  
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav mr-auto">
+        <li class="nav-item active">
+          <a class="nav-link" href="#start">Home <span class="sr-only">(current)</span></a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#chat">My chat</a>
+        </li>
+        
+        <li class="nav-item">
+          <a class="nav-link" href="#start">Disconnect</a>
+        </li>
+      </ul>
+      <form class="form-inline my-2 my-lg-0">
+        <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
+        <button class="btn btn-outline-success my-2 my-sm-0 searchUser" type="submit">Search user</button>
+      </form>
+    </div>
+  </nav>
   <section id="firstLogin">
     <div class="row justify-content-center">
       <div class="col-5 loginForm">
@@ -28,10 +53,20 @@
 
   <section id="chat" class="d-none">
     <ul id="messages"></ul>
-    <form action="">
-      <input id="m" autocomplete="off" />
-      <button>Send</button>
-    </form>
+    <div class="row fixed-bottom">
+      <div class="col-12">
+        <form action="">
+          <div class="row">
+            <div class="col-9">
+              <input id="m" autocomplete="off" />
+            </div>
+            <div class="col-3">
+              <button id="send">Send</button>
+            </div>
+          </div>
+        </form>
+      </div>
+    </div>
   </section>
 
   <script src="https://cdn.socket.io/socket.io-1.2.0.js"></script>

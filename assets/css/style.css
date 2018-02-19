@@ -1,4 +1,4 @@
-* { 
+/* * { 
     margin: 0; 
     padding: 0; 
     box-sizing: border-box; 
@@ -36,12 +36,7 @@ form button {
     background: #eee; 
 }
 
-.ppl{
-    color: green;
-}
-.you{
-    color: blue;
-}
+
 
 section{
     margin-top: 5em;
@@ -59,4 +54,110 @@ section{
     display: flex;
     flex-flow: column;
     justify-content: center;
+} */
+
+* { 
+  margin: 0; 
+  padding: 0; 
+  box-sizing: 
+  border-box; 
+}
+body{
+  font-family: Helvetica, Arial; 
+  font-size: 15px;
+  background-image: url('../img/70.jpg');
+  background-repeat: repeat;
+}
+/* --------------------------------- NAVBAR --*/
+.navbar-light{
+  background-color: teal;
+}
+.navbar-light .navbar-brand, a.nav-link{
+  color: white !important;
+}
+a.nav-link:hover{
+  background-color: #b2dfdc;
+  color: rgb(1, 56, 56)!important;
+  padding-left: 2vh;
+  border-radius: 2vh;
+}
+.searchUser{
+  color: white;
+  background-color: transparent;
+  border: 0.1vh solid white;
+}
+.searchUser:hover{
+  color: #013636;
+  background-color: #b2dfdc;
+  border: 0.1vh solid #b2dfdc;
+}
+.navbar-light .navbar-toggler-icon{
+  background-image: url("data:image/svg+xml;charset=utf8,%3Csvg viewBox='0 0 30 30' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath stroke='rgba(255, 255, 255, 0.8)' stroke-width='2' stroke-linecap='round' stroke-miterlimit='10' d='M4 7h22M4 15h22M4 23h22'/%3E%3C/svg%3E");
+}
+/*----------------------------------------------- LOGIN */
+h5{
+  color: teal;
+}
+#btn, #guest{
+  background-color: teal;
+  margin-top: 1vh;
+  border: 0.1vh solid teal;  
+}
+/*------------------------------------------------- CHAT */
+#formChat { 
+  background: teal; 
+  padding: 0.5vh; 
+  bottom: 0; 
+  left: 0;
+  width: 100%;  
+}
+#formChat div{
+  padding: 0;
+  margin: 0.1vh 0;
+}
+#m { 
+  border: 0; 
+  border-radius: 1.5vh;
+  padding: 1.5vh; 
+  width: 90vw; 
+}
+#send { 
+  width: 100%;
+  background-color: teal; 
+  padding: 1vh;
+  margin: 0.3vh ; 
+  color: #b2dfdc;
+  border: 0.1vh solid teal;
+  border-radius: 2vh;
+}
+#send:hover, #sendNick:hover{
+  background-color: #b2dfdc;
+  color: #013636;
+  border: 1px solid #b2dfdc;
+}
+#messages { 
+  list-style-type: none; 
+  margin: 0; 
+  padding: 0 0 10vh 0; 
+  height: 60%;
+  width: 100%;
+  position: relative;
+  overflow: auto,
+}
+#messages li { 
+  padding: 2vh; 
+  margin: 1vh;
+  background-color:rgb(178, 181, 223);
+  border-radius: 0.5vh;
+}
+#messages li:nth-child(odd) { 
+  background-color: rgba(255, 255, 255, 1); 
+}
+.ppl{
+  color: teal;
+  font-weight: bold;
+}
+.you{
+  color: salmon;
+  font-weight: bold;  
 }
