@@ -147,7 +147,7 @@ h5{
 #messages li { 
   padding: 2vh; 
   margin: 1vh;
-  background-color:rgb(178, 181, 223);
+  background-color:rgba(178, 223, 220, 1);
   border-radius: 0.5vh;
 }
 #messages li:nth-child(odd) { 
